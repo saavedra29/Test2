@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    >
+
+    <android.support.v7.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:columnCount="3"
+        app:rowCount="4"
+        android:id="@+id/imagesLayout"
+        android:layout_weight="0.93">
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 1"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/back"
+            android:scaleType="fitCenter"
+            android:id="@+id/image1"
+            android:onClick="addToCounter"
+            android:cropToPadding="false"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 2"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/back"
+            android:scaleType="centerCrop"
+            android:id="@+id/image2"
+            android:onClick="addToCounter"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 3"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/back"
+            android:scaleType="centerCrop"
+            android:id="@+id/image3"
+            android:onClick="addToCounter"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 4"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/back"
+            android:scaleType="centerCrop"
+            android:id="@+id/image4"
+            android:onClick="addToCounter"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 5"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/back"
+            android:scaleType="centerCrop"
+            android:id="@+id/image5"
+            android:onClick="addToCounter"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 6"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/back"
+            android:scaleType="centerCrop"
+            android:id="@+id/image6"
+            android:onClick="addToCounter"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 7"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/back"
+            android:scaleType="centerCrop"
+            android:id="@+id/image7"
+            android:onClick="addToCounter"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 8"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/back"
+            android:scaleType="centerCrop"
+            android:id="@+id/image8"
+            android:onClick="addToCounter"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 9"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/back"
+            android:scaleType="centerCrop"
+            android:id="@+id/image9"
+            android:onClick="addToCounter"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 10"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/back"
+            android:scaleType="centerCrop"
+            android:id="@+id/image10"
+            android:onClick="addToCounter"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 11"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/back"
+            android:scaleType="centerCrop"
+            android:id="@+id/image11"
+            android:onClick="addToCounter"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 12"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/back"
+            android:scaleType="centerCrop"
+            android:id="@+id/image12"
+            android:onClick="addToCounter"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+    </android.support.v7.widget.GridLayout>
+    <Button android:layout_height="wrap_content" android:layout_width="wrap_content"
+            android:text="OK"
+            android:layout_gravity="center_horizontal"
+            android:onClick="goToResult"
+            android:id="@+id/ok_button"></Button>
+</LinearLayout>
