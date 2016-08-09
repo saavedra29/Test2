@@ -7,20 +7,33 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 
 public class GameActivity extends Activity
 {
-    // Create an image array
-    /*
-    String[] imageArray = {"R.drawable.chimpanzee", "R.drawable.elephant",
-            "R.drawable.giraffe", "R.drawable.hippopotamus", "R.drawable.rhino",
-            "R.drawable.lion"};
-            */
-    String[] imageArray = {"chimpanzee", "elephant",
-            "giraffe", "hippopotamus", "rhino",
-            "lion"};
+    class PlaceHolder
+    {
+        public String animalName;
+        public boolean visible;
+        public int id;
+
+        public PlaceHolder(String animalName, boolean visible, int id)
+        {
+            this.animalName = animalName;
+            this.visible = visible;
+            this.id = id;
+        }
+    }
+
+    private ArrayList<PlaceHolder> mainList = new ArrayList<PlaceHolder>();
+    ArrayList<String> animalList = new ArrayList<>(Arrays.asList("lion", "lion", "rhino",
+            "rhino", "chimpanzee", "chimpanzee", "giraffe", "giraffe", "hippopotamus",
+            "hippopotamus", "elephant", "elephant"));
     static int counter = 0;
     ViewGroup v;
 
@@ -29,18 +42,9 @@ public class GameActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        v = (ViewGroup)findViewById(R.id.imagesLayout);
-        int cou = v.getChildCount();
-        for (int i = 0; i < cou; i++)
-        {
-            ImageButton nextChild = (ImageButton) v.getChildAt(i);
-            Random rand = new Random();
-            int index = rand.nextInt(imageArray.length);
-            String imageString = imageArray[index];
-            int resID = getResources().getIdentifier(imageString, "drawable", getPackageName());
-            nextChild.setImageResource(resID);
-
-        }
+        long seed = System.nanoTime();
+        Collections.shuffle(animalList);
+        refreshImages();
 
     }
 
@@ -53,23 +57,25 @@ public class GameActivity extends Activity
 
     public void goToResult(View view)
     {
-        Intent intent = new Intent(this, ResultActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, ResultActivity.class);
+        //startActivity(intent);
+        refreshImages();
     }
 
     public void refreshImages()
     {
         v = (ViewGroup)findViewById(R.id.imagesLayout);
         int cou = v.getChildCount();
-        for (int i = 0; i < cou; ++i)
+        for (int i = cou - 1; i >= 0; --i)
         {
             ImageButton nextChild = (ImageButton) v.getChildAt(i);
-            Random rand = new Random();
-            int index = rand.nextInt(imageArray.length);
-            String imageString = imageArray[index];
+            String imageString = animalList.remove(0);
             int resID = getResources().getIdentifier(imageString, "drawable", getPackageName());
             nextChild.setImageResource(resID);
+            PlaceHolder placeHolder = new PlaceHolder(imageString, false, resID);
+            mainList.add(placeHolder);
 
         }
     }
+
 }

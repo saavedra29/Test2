@@ -25,7 +25,7 @@
             android:src="@drawable/back"
             android:scaleType="fitCenter"
             android:id="@+id/image1"
-            android:onClick="addToCounter"
+            android:onClick="addToCounter(1)"
             android:cropToPadding="false"
             android:background="#00000000"
             android:padding="10dip"/>
@@ -178,5 +178,6 @@
             android:text="OK"
             android:layout_gravity="center_horizontal"
             android:onClick="goToResult"
-            android:id="@+id/ok_button"></Button>
+            android:id="@+id/ok_button" />
+
 </LinearLayout>
