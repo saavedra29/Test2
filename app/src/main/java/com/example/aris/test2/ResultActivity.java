@@ -14,7 +14,7 @@ public class ResultActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         TextView text = (TextView)findViewById(R.id.resultText);
-        text.setText("" + GameActivity.counter);
+        text.setText("The end");
 
     }
 }

@@ -1,13 +1,12 @@
 package com.example.aris.test2;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -40,6 +39,7 @@ public class GameActivity extends Activity
     int gameState;
     int imagesNumber;
     ViewGroup v;
+    private int invisibleObjects;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -58,7 +58,7 @@ public class GameActivity extends Activity
         v = (ViewGroup)findViewById(R.id.imagesLayout);
         imagesNumber = v.getChildCount();
         Button button = (Button)findViewById(R.id.ok_button);
-        //button.setVisibility(View.INVISIBLE);
+        invisibleObjects = 0;
         refreshImages();
 
 
@@ -121,6 +121,7 @@ public class GameActivity extends Activity
             ImageButton button2 = null;
             String animalName1 = null;
             String animalName2 = null;
+
             // Check for couple of same images
             for (int i = 0; i < imagesNumber; i++)
             {
@@ -139,8 +140,17 @@ public class GameActivity extends Activity
             if (Objects.equals(animalName1, animalName2))
             {
                 // We got a pair
+                assert button1 != null;
                 button1.setVisibility(View.INVISIBLE);
+                invisibleObjects++;
+                assert button2 != null;
                 button2.setVisibility(View.INVISIBLE);
+                invisibleObjects++;
+                if (invisibleObjects == imagesNumber)
+                {
+                    Intent intent = new Intent(this, ResultActivity.class);
+                    startActivity(intent);
+                }
             }
 
 
