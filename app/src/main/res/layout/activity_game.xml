@@ -25,7 +25,7 @@
             android:src="@drawable/back"
             android:scaleType="fitCenter"
             android:id="@+id/image1"
-            android:onClick="addToCounter(1)"
+            android:onClick="myOnClick"
             android:cropToPadding="false"
             android:background="#00000000"
             android:padding="10dip"/>
@@ -39,7 +39,7 @@
             android:src="@drawable/back"
             android:scaleType="centerCrop"
             android:id="@+id/image2"
-            android:onClick="addToCounter"
+            android:onClick="myOnClick"
             android:background="#00000000"
             android:padding="10dip"/>
 
@@ -52,7 +52,7 @@
             android:src="@drawable/back"
             android:scaleType="centerCrop"
             android:id="@+id/image3"
-            android:onClick="addToCounter"
+            android:onClick="myOnClick"
             android:background="#00000000"
             android:padding="10dip"/>
 
@@ -65,7 +65,7 @@
             android:src="@drawable/back"
             android:scaleType="centerCrop"
             android:id="@+id/image4"
-            android:onClick="addToCounter"
+            android:onClick="myOnClick"
             android:background="#00000000"
             android:padding="10dip"/>
 
@@ -78,7 +78,7 @@
             android:src="@drawable/back"
             android:scaleType="centerCrop"
             android:id="@+id/image5"
-            android:onClick="addToCounter"
+            android:onClick="myOnClick"
             android:background="#00000000"
             android:padding="10dip"/>
 
@@ -91,7 +91,7 @@
             android:src="@drawable/back"
             android:scaleType="centerCrop"
             android:id="@+id/image6"
-            android:onClick="addToCounter"
+            android:onClick="myOnClick"
             android:background="#00000000"
             android:padding="10dip"/>
 
@@ -104,7 +104,7 @@
             android:src="@drawable/back"
             android:scaleType="centerCrop"
             android:id="@+id/image7"
-            android:onClick="addToCounter"
+            android:onClick="myOnClick"
             android:background="#00000000"
             android:padding="10dip"/>
 
@@ -117,7 +117,7 @@
             android:src="@drawable/back"
             android:scaleType="centerCrop"
             android:id="@+id/image8"
-            android:onClick="addToCounter"
+            android:onClick="myOnClick"
             android:background="#00000000"
             android:padding="10dip"/>
 
@@ -130,7 +130,7 @@
             android:src="@drawable/back"
             android:scaleType="centerCrop"
             android:id="@+id/image9"
-            android:onClick="addToCounter"
+            android:onClick="myOnClick"
             android:background="#00000000"
             android:padding="10dip"/>
 
@@ -143,7 +143,7 @@
             android:src="@drawable/back"
             android:scaleType="centerCrop"
             android:id="@+id/image10"
-            android:onClick="addToCounter"
+            android:onClick="myOnClick"
             android:background="#00000000"
             android:padding="10dip"/>
 
@@ -156,7 +156,7 @@
             android:src="@drawable/back"
             android:scaleType="centerCrop"
             android:id="@+id/image11"
-            android:onClick="addToCounter"
+            android:onClick="myOnClick"
             android:background="#00000000"
             android:padding="10dip"/>
 
@@ -169,7 +169,7 @@
             android:src="@drawable/back"
             android:scaleType="centerCrop"
             android:id="@+id/image12"
-            android:onClick="addToCounter"
+            android:onClick="myOnClick"
             android:background="#00000000"
             android:padding="10dip"/>
 

@@ -1,18 +1,16 @@
 package com.example.aris.test2;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Random;
 
 public class GameActivity extends Activity
 {
@@ -21,20 +19,25 @@ public class GameActivity extends Activity
         public String animalName;
         public boolean visible;
         public int id;
+        public int index;
+        public int imageId;
 
-        public PlaceHolder(String animalName, boolean visible, int id)
+        public PlaceHolder(String animalName, boolean visible, int id, int index, int imageId)
         {
             this.animalName = animalName;
             this.visible = visible;
             this.id = id;
+            this.index = index;
+            this.imageId = imageId;
         }
     }
 
-    private ArrayList<PlaceHolder> mainList = new ArrayList<PlaceHolder>();
-    ArrayList<String> animalList = new ArrayList<>(Arrays.asList("lion", "lion", "rhino",
-            "rhino", "chimpanzee", "chimpanzee", "giraffe", "giraffe", "hippopotamus",
-            "hippopotamus", "elephant", "elephant"));
-    static int counter = 0;
+    private ArrayList<Integer> couple;
+    private ArrayList<PlaceHolder> mainList;
+    private ArrayList<String> animalList;
+    static int counter;
+    int gameState;
+    int imagesNumber;
     ViewGroup v;
 
     @Override
@@ -42,37 +45,102 @@ public class GameActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        long seed = System.nanoTime();
+        // INITIALIZE ALL THE VARIALBES
+        couple = new ArrayList<>();
+        mainList = new ArrayList<>();
+        animalList = new ArrayList<>(Arrays.asList("lion", "lion", "rhino",
+                "rhino", "chimpanzee", "chimpanzee", "giraffe", "giraffe", "hippopotamus",
+                "hippopotamus", "elephant", "elephant"));
+        counter = 0;
+        gameState = 0;
         Collections.shuffle(animalList);
+        v = (ViewGroup)findViewById(R.id.imagesLayout);
+        imagesNumber = v.getChildCount();
+        Button button = (Button)findViewById(R.id.ok_button);
+        //button.setVisibility(View.INVISIBLE);
         refreshImages();
+
 
     }
 
-    public void addToCounter(View view)
+    public void myOnClick(View view)
     {
-        counter++;
-        Button b = (Button)findViewById(R.id.ok_button);
-        b.setText("" + counter);
+        /*
+        TextView v = (TextView)findViewById(R.id.testView);
+        v.setText(Integer.toString(view.getId()));
+        */
+        if (gameState == 0)
+        {
+            // Change the cover image with the real image
+            int id = view.getId();
+            for (int i = 0; i < imagesNumber; i++)
+            {
+                int tmpId = mainList.get(i).id;
+                if (id == tmpId)
+                {
+
+                    ImageButton button = (ImageButton)findViewById(view.getId());
+                    button.setImageResource(mainList.get(i).imageId);
+                    // Add the image to the viewable images
+                    couple.add(0, tmpId);
+                    // Add 1 to the game state
+                    ++gameState;
+                }
+            }
+        }
+        else if (gameState == 1)
+        {
+            // Change the cover image with the real image
+            int id = view.getId();
+            for (int i = 0; i < imagesNumber; i++)
+            {
+                int tmpId = mainList.get(i).id;
+                if (id == tmpId)
+                {
+
+                    ImageButton button = (ImageButton)findViewById(view.getId());
+                    button.setImageResource(mainList.get(i).imageId);
+                    // Add the image to the viewable images
+                    couple.add(1, tmpId);
+                    // Add 1 to the game state
+                    ++gameState;
+                }
+            }
+            // Make visible the ok button
+            Button button = (Button)findViewById(R.id.ok_button);
+            //button.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+
+        }
+
     }
 
     public void goToResult(View view)
     {
-        //Intent intent = new Intent(this, ResultActivity.class);
-        //startActivity(intent);
-        refreshImages();
+        // Change the cover image back to cover
+        for (int i = couple.size() - 1; i >= 0; i--)
+        {
+            ImageButton v = (ImageButton)findViewById(couple.get(i));
+            v.setImageResource(getResources().getIdentifier("back", "drawable", getPackageName()));
+        }
+        couple.clear();
+        gameState = 0;
+        Button button = (Button)findViewById(view.getId());
+        //button.setVisibility(View.INVISIBLE);
     }
 
     public void refreshImages()
     {
-        v = (ViewGroup)findViewById(R.id.imagesLayout);
-        int cou = v.getChildCount();
-        for (int i = cou - 1; i >= 0; --i)
+        for (int i = imagesNumber - 1; i >= 0; --i)
         {
             ImageButton nextChild = (ImageButton) v.getChildAt(i);
             String imageString = animalList.remove(0);
             int resID = getResources().getIdentifier(imageString, "drawable", getPackageName());
-            nextChild.setImageResource(resID);
-            PlaceHolder placeHolder = new PlaceHolder(imageString, false, resID);
+            nextChild.setImageResource(getResources().getIdentifier(
+                    "back", "drawable", getPackageName()));
+            PlaceHolder placeHolder = new PlaceHolder(imageString, false, nextChild.getId(), i, resID);
             mainList.add(placeHolder);
 
         }
