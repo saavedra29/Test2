@@ -11,6 +11,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Objects;
 
 public class GameActivity extends Activity
 {
@@ -92,43 +93,66 @@ public class GameActivity extends Activity
         {
             // Change the cover image with the real image
             int id = view.getId();
-            for (int i = 0; i < imagesNumber; i++)
+            if (id != couple.get(0))
             {
-                int tmpId = mainList.get(i).id;
-                if (id == tmpId)
+                for (int i = 0; i < imagesNumber; i++)
                 {
+                    int tmpId = mainList.get(i).id;
+                    if (id == tmpId)
+                    {
 
-                    ImageButton button = (ImageButton)findViewById(view.getId());
-                    button.setImageResource(mainList.get(i).imageId);
-                    // Add the image to the viewable images
-                    couple.add(1, tmpId);
-                    // Add 1 to the game state
-                    ++gameState;
+                        ImageButton button = (ImageButton) findViewById(view.getId());
+                        button.setImageResource(mainList.get(i).imageId);
+                        // Add the image to the viewable images
+                        couple.add(1, tmpId);
+                        // Add 1 to the game state
+                        ++gameState;
+                    }
                 }
             }
-            // Make visible the ok button
-            Button button = (Button)findViewById(R.id.ok_button);
-            //button.setVisibility(View.VISIBLE);
         }
-        else
-        {
-
-        }
-
     }
 
     public void goToResult(View view)
     {
-        // Change the cover image back to cover
-        for (int i = couple.size() - 1; i >= 0; i--)
+        if (couple.size() == 2)
         {
-            ImageButton v = (ImageButton)findViewById(couple.get(i));
-            v.setImageResource(getResources().getIdentifier("back", "drawable", getPackageName()));
+            ImageButton button1 = null;
+            ImageButton button2 = null;
+            String animalName1 = null;
+            String animalName2 = null;
+            // Check for couple of same images
+            for (int i = 0; i < imagesNumber; i++)
+            {
+                if (mainList.get(i).id == couple.get(0))
+                {
+                    button1 = (ImageButton)findViewById(mainList.get(i).id);
+                    animalName1 = mainList.get(i).animalName;
+                }
+                if (mainList.get(i).id == couple.get(1))
+                {
+                    button2 = (ImageButton)findViewById(mainList.get(i).id);
+                    animalName2 = mainList.get(i).animalName;
+                }
+            }
+
+            if (Objects.equals(animalName1, animalName2))
+            {
+                // We got a pair
+                button1.setVisibility(View.INVISIBLE);
+                button2.setVisibility(View.INVISIBLE);
+            }
+
+
+            // Change the cover image back to cover
+            for (int i = couple.size() - 1; i >= 0; i--)
+            {
+                ImageButton v = (ImageButton) findViewById(couple.get(i));
+                v.setImageResource(getResources().getIdentifier("back", "drawable", getPackageName()));
+            }
+            couple.clear();
+            gameState = 0;
         }
-        couple.clear();
-        gameState = 0;
-        Button button = (Button)findViewById(view.getId());
-        //button.setVisibility(View.INVISIBLE);
     }
 
     public void refreshImages()
