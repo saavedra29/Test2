@@ -23,7 +23,7 @@
             app:layout_rowWeight="1"
             app:layout_columnWeight="1"
             android:src="@drawable/back"
-            android:scaleType="fitCenter"
+            android:scaleType="centerCrop"
             android:id="@+id/image1"
             android:onClick="myOnClick"
             android:cropToPadding="false"
