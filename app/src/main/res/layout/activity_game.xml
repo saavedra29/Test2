@@ -14,7 +14,7 @@
         app:columnCount="3"
         app:rowCount="4"
         android:id="@+id/imagesLayout"
-        android:layout_weight="0.93">
+        android:layout_weight="1">
 
         <ImageButton
             android:layout_width="50dip"
@@ -174,10 +174,29 @@
             android:padding="10dip"/>
 
     </android.support.v7.widget.GridLayout>
-    <Button android:layout_height="wrap_content" android:layout_width="wrap_content"
-            android:text="OK"
-            android:layout_gravity="center_horizontal"
-            android:onClick="goToResult"
-            android:id="@+id/ok_button" />
+
+    <android.support.v7.widget.GridLayout android:layout_height="wrap_content" android:layout_width="match_parent"
+                                          app:columnCount="2" app:rowCount="1"
+                                          android:layout_weight="1">
+        <Button android:layout_height="wrap_content" android:layout_width="wrap_content"
+                android:text="OK"
+                android:onClick="goToResult"
+                android:id="@+id/ok_button"
+                app:layout_columnWeight="1"
+                app:layout_gravity="center_horizontal"
+                android:layout_margin="15dp"/>
+
+        <com.example.aris.test2.MChronometer
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_columnWeight="1"
+            app:layout_gravity="center_horizontal"
+            android:layout_margin="15dp"
+            android:textSize="24sp"
+            android:id="@+id/chronometer"/>
+    </android.support.v7.widget.GridLayout>
+
+
+
 
 </LinearLayout>

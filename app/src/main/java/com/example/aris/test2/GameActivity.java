@@ -3,14 +3,15 @@ package com.example.aris.test2;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Chronometer;
 import android.widget.ImageButton;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Objects;
+import com.example.aris.test2.MChronometer;
 
 public class GameActivity extends Activity
 {
@@ -32,6 +33,7 @@ public class GameActivity extends Activity
         }
     }
 
+    public static final int NUM_OF_STAGES = 1;
     private ArrayList<Integer> couple;
     private ArrayList<PlaceHolder> mainList;
     private ArrayList<String> animalList;
@@ -40,12 +42,15 @@ public class GameActivity extends Activity
     private int imagesNumber;
     private ViewGroup v;
     private int invisibleObjects;
+    private MChronometer chrono;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        chrono = (MChronometer) findViewById(R.id.chronometer);
+        chrono.start();
         counter = 0;
         initStage();
 
@@ -135,8 +140,9 @@ public class GameActivity extends Activity
                 invisibleObjects++;
                 if (invisibleObjects == imagesNumber)
                 {
-                    if (counter > 3)
+                    if (counter == NUM_OF_STAGES)
                     {
+                        chrono.stop();
                         Intent intent = new Intent(this, ResultActivity.class);
                         startActivity(intent);
                     }
