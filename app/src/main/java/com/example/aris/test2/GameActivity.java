@@ -3,9 +3,9 @@ package com.example.aris.test2;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,9 +36,9 @@ public class GameActivity extends Activity
     private ArrayList<PlaceHolder> mainList;
     private ArrayList<String> animalList;
     static int counter;
-    int gameState;
-    int imagesNumber;
-    ViewGroup v;
+    private int gameState;
+    private int imagesNumber;
+    private ViewGroup v;
     private int invisibleObjects;
 
     @Override
@@ -46,25 +46,12 @@ public class GameActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        // INITIALIZE ALL THE VARIALBES
-        couple = new ArrayList<>();
-        mainList = new ArrayList<>();
-        animalList = new ArrayList<>(Arrays.asList("lion", "lion", "rhino",
-                "rhino", "chimpanzee", "chimpanzee", "giraffe", "giraffe", "hippopotamus",
-                "hippopotamus", "elephant", "elephant"));
         counter = 0;
-        gameState = 0;
-        Collections.shuffle(animalList);
-        v = (ViewGroup)findViewById(R.id.imagesLayout);
-        imagesNumber = v.getChildCount();
-        Button button = (Button)findViewById(R.id.ok_button);
-        invisibleObjects = 0;
-        refreshImages();
-
+        initStage();
 
     }
 
-    public void myOnClick(View view)
+    void myOnClick(View view)
     {
         /*
         TextView v = (TextView)findViewById(R.id.testView);
@@ -113,7 +100,7 @@ public class GameActivity extends Activity
         }
     }
 
-    public void goToResult(View view)
+    void goToResult(View view)
     {
         if (couple.size() == 2)
         {
@@ -148,8 +135,15 @@ public class GameActivity extends Activity
                 invisibleObjects++;
                 if (invisibleObjects == imagesNumber)
                 {
-                    Intent intent = new Intent(this, ResultActivity.class);
-                    startActivity(intent);
+                    if (counter > 3)
+                    {
+                        Intent intent = new Intent(this, ResultActivity.class);
+                        startActivity(intent);
+                    }
+                    else
+                    {
+                        initStage();
+                    }
                 }
             }
 
@@ -165,7 +159,7 @@ public class GameActivity extends Activity
         }
     }
 
-    public void refreshImages()
+    private void refreshImages()
     {
         for (int i = imagesNumber - 1; i >= 0; --i)
         {
@@ -178,6 +172,28 @@ public class GameActivity extends Activity
             mainList.add(placeHolder);
 
         }
+    }
+
+    private void initStage()
+    {
+        // INITIALIZE ALL THE VARIALBES
+        counter++;
+        animalList = new ArrayList<>(Arrays.asList("lion", "lion", "rhino",
+                "rhino", "chimpanzee", "chimpanzee", "giraffe", "giraffe", "hippopotamus",
+                "hippopotamus", "elephant", "elephant"));
+        Collections.shuffle(animalList);
+        couple = new ArrayList<>();
+        mainList = new ArrayList<>();
+        gameState = 0;
+        v = (ViewGroup)findViewById(R.id.imagesLayout);
+        imagesNumber = v.getChildCount();
+        for (int i = 0; i < imagesNumber; i++)
+        {
+            View imageButton = v.getChildAt(i);
+            imageButton.setVisibility(View.VISIBLE);
+        }
+        invisibleObjects = 0;
+        refreshImages();
     }
 
 }
