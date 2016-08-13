@@ -33,7 +33,7 @@ public class GameActivity extends Activity
         }
     }
 
-    public static final int NUM_OF_STAGES = 1;
+    public static final int NUM_OF_STAGES = 2;
     private ArrayList<Integer> couple;
     private ArrayList<PlaceHolder> mainList;
     private ArrayList<String> animalList;
@@ -114,64 +114,63 @@ public class GameActivity extends Activity
     {
         if (couple.size() == 2)
         {
-            ImageButton button1 = null;
-            ImageButton button2 = null;
-            String animalName1 = null;
-            String animalName2 = null;
-
-            // Check for couple of same images
-            for (int i = 0; i < imagesNumber; i++)
+            if ((invisibleObjects == imagesNumber - 2) && (counter == NUM_OF_STAGES))
             {
-                if (mainList.get(i).id == couple.get(0))
-                {
-                    button1 = (ImageButton)findViewById(mainList.get(i).id);
-                    animalName1 = mainList.get(i).animalName;
-                }
-                if (mainList.get(i).id == couple.get(1))
-                {
-                    button2 = (ImageButton)findViewById(mainList.get(i).id);
-                    animalName2 = mainList.get(i).animalName;
-                }
+                score = (String)chrono.getText();
+                chrono.stop();
+                Intent intent = new Intent(this, ResultActivity.class);
+                startActivity(intent);
+                finish();
             }
 
-            if (Objects.equals(animalName1, animalName2))
+            else
             {
-                // We got a pair
-                assert button1 != null;
-                button1.setVisibility(View.INVISIBLE);
-                invisibleObjects++;
-                assert button2 != null;
-                button2.setVisibility(View.INVISIBLE);
-                invisibleObjects++;
-                if (invisibleObjects == imagesNumber)
+                ImageButton button1 = null;
+                ImageButton button2 = null;
+                String animalName1 = null;
+                String animalName2 = null;
+
+                // Check for couple of same images
+                for (int i = 0; i < imagesNumber; i++)
                 {
-                    if (counter == NUM_OF_STAGES)
+                    if (mainList.get(i).id == couple.get(0))
                     {
-                        score = (String)chrono.getText();
-                        chrono.stop();
-                        chrono.setVisibility(View.GONE);
-
-
-                        Intent intent = new Intent(this, ResultActivity.class);
-                        startActivity(intent);
-                        finish();
+                        button1 = (ImageButton)findViewById(mainList.get(i).id);
+                        animalName1 = mainList.get(i).animalName;
                     }
-                    else
+                    if (mainList.get(i).id == couple.get(1))
+                    {
+                        button2 = (ImageButton)findViewById(mainList.get(i).id);
+                        animalName2 = mainList.get(i).animalName;
+                    }
+                }
+
+                if (Objects.equals(animalName1, animalName2))
+                {
+                    // We got a pair
+                    assert button1 != null;
+                    button1.setVisibility(View.INVISIBLE);
+                    invisibleObjects++;
+                    assert button2 != null;
+                    button2.setVisibility(View.INVISIBLE);
+                    invisibleObjects++;
+                    if (invisibleObjects == imagesNumber)
                     {
                         initStage();
                     }
                 }
-            }
 
 
-            // Change the cover image back to cover
-            for (int i = couple.size() - 1; i >= 0; i--)
-            {
-                ImageButton v = (ImageButton) findViewById(couple.get(i));
-                v.setImageResource(getResources().getIdentifier("back", "drawable", getPackageName()));
+                // Change the cover image back to cover
+                for (int i = couple.size() - 1; i >= 0; i--)
+                {
+                    ImageButton v = (ImageButton) findViewById(couple.get(i));
+                    v.setImageResource(getResources().getIdentifier("back", "drawable", getPackageName()));
+                }
+                couple.clear();
+                gameState = 0;
+
             }
-            couple.clear();
-            gameState = 0;
         }
     }
 
