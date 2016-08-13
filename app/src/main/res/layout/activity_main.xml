@@ -1,24 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     android:background="@drawable/introbackground"
-    tools:context="com.example.aris.test2.MainActivity"
     >
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+        <Spinner
+            android:id="@+id/stages_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_gravity="center_horizontal"
+            android:layout_centerInParent="true"
+            android:spinnerMode="dropdown"
+            android:prompt="@string/spinner_title"/>
 
-    <Button
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="@string/starting_button"
-        android:onClick="goToGame">
+    </RelativeLayout>
 
-    </Button>
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/starting_button"
+            android:onClick="goToGame"
+            android:id="@+id/button2"
+            app:layout_gravity="center_horizontal"
+            android:layout_centerInParent="true">
+
+        </Button>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
