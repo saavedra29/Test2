@@ -3,15 +3,16 @@ package com.example.aris.test2;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Chronometer;
 import android.widget.ImageButton;
+import android.os.SystemClock;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Objects;
-import com.example.aris.test2.MChronometer;
 
 public class GameActivity extends Activity
 {
@@ -43,6 +44,10 @@ public class GameActivity extends Activity
     private ViewGroup v;
     private int invisibleObjects;
     private MChronometer chrono;
+    static String score;
+    static long timeBeforeStop;
+    static long timeAfterStop;
+    static boolean firstTimeRunning;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -52,16 +57,48 @@ public class GameActivity extends Activity
         chrono = (MChronometer) findViewById(R.id.chronometer);
         chrono.start();
         counter = 0;
+        score = "";
+        timeBeforeStop = 0;
+        firstTimeRunning = true;
         initStage();
 
     }
 
+    protected void onStop()
+    {
+        super.onStop();
+        timeBeforeStop = SystemClock.elapsedRealtime();
+        Log.d("LogTest", "timeBeforeStop: " + timeBeforeStop);
+        chrono.stop();
+    }
+
+    protected void onStart()
+    {
+        long difference;
+        super.onStart();
+        timeAfterStop = SystemClock.elapsedRealtime();
+        Log.d("LogTest", "timeAfterStop: " + timeAfterStop);
+        if (!firstTimeRunning)
+        {
+            difference = timeAfterStop - timeBeforeStop;
+        }
+        else
+        {
+            difference = 0;
+            firstTimeRunning = false;
+        }
+        Log.d("LogTest", "Difference: " + difference);
+
+        /*
+        Log.d("LogTest", "Chrono.getBase(): " + chrono.getBase() + "\nChrono.getTimeElapsed: " +
+        chrono.getTimeElapsed() + "\nelapsedRealTime: " + SystemClock.elapsedRealtime());
+        */
+        chrono.setBase(chrono.getBase() + difference);
+        chrono.start();
+    }
+
     void myOnClick(View view)
     {
-        /*
-        TextView v = (TextView)findViewById(R.id.testView);
-        v.setText(Integer.toString(view.getId()));
-        */
         if (gameState == 0)
         {
             // Change the cover image with the real image
@@ -142,7 +179,11 @@ public class GameActivity extends Activity
                 {
                     if (counter == NUM_OF_STAGES)
                     {
+                        score = (String)chrono.getText();
                         chrono.stop();
+                        chrono.setVisibility(View.GONE);
+
+
                         Intent intent = new Intent(this, ResultActivity.class);
                         startActivity(intent);
                     }

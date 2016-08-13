@@ -13,8 +13,8 @@ public class ResultActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-        TextView text = (TextView)findViewById(R.id.resultText);
-        text.setText("The end");
+        TextView text = (TextView)findViewById(R.id.score_output);
+        text.setText(GameActivity.score);
 
     }
 }

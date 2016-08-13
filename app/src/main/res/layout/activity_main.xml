@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/mainBackground"
+    android:background="@drawable/introbackground"
     tools:context="com.example.aris.test2.MainActivity"
     >
 

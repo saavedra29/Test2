@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Test2</string>
+    <string name="app_name">Elephant Memory</string>
     <string name="starting_button">Start the app!</string>
     <string name="game_message">Welcome to the game</string>
     <string name="result"></string>
