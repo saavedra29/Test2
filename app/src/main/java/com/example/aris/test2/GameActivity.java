@@ -3,7 +3,6 @@ package com.example.aris.test2;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -34,7 +33,7 @@ public class GameActivity extends Activity
         }
     }
 
-    public static final int NUM_OF_STAGES = 1;
+    public static final int NUM_OF_STAGES = 2;
     private ArrayList<Integer> couple;
     private ArrayList<PlaceHolder> mainList;
     private ArrayList<String> animalList;
@@ -58,44 +57,13 @@ public class GameActivity extends Activity
         chrono.start();
         counter = 0;
         score = "";
-        timeBeforeStop = 0;
         firstTimeRunning = true;
         initStage();
-
-    }
-
-    protected void onStop()
-    {
-        super.onStop();
         timeBeforeStop = SystemClock.elapsedRealtime();
-        Log.d("LogTest", "timeBeforeStop: " + timeBeforeStop);
-        chrono.stop();
+
     }
 
-    protected void onStart()
-    {
-        long difference;
-        super.onStart();
-        timeAfterStop = SystemClock.elapsedRealtime();
-        Log.d("LogTest", "timeAfterStop: " + timeAfterStop);
-        if (!firstTimeRunning)
-        {
-            difference = timeAfterStop - timeBeforeStop;
-        }
-        else
-        {
-            difference = 0;
-            firstTimeRunning = false;
-        }
-        Log.d("LogTest", "Difference: " + difference);
 
-        /*
-        Log.d("LogTest", "Chrono.getBase(): " + chrono.getBase() + "\nChrono.getTimeElapsed: " +
-        chrono.getTimeElapsed() + "\nelapsedRealTime: " + SystemClock.elapsedRealtime());
-        */
-        chrono.setBase(chrono.getBase() + difference);
-        chrono.start();
-    }
 
     void myOnClick(View view)
     {
@@ -243,4 +211,20 @@ public class GameActivity extends Activity
         refreshImages();
     }
 
+    protected void onStop()
+    {
+        super.onStop();
+        timeBeforeStop = SystemClock.elapsedRealtime();
+        chrono.stop();
+    }
+
+    protected void onStart()
+    {
+        long difference;
+        super.onStart();
+        timeAfterStop = SystemClock.elapsedRealtime();
+        difference = timeAfterStop - timeBeforeStop;
+        chrono.setBase(chrono.getBase() + difference);
+        chrono.start();
+    }
 }
