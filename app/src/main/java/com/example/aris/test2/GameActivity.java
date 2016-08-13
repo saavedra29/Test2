@@ -33,7 +33,7 @@ public class GameActivity extends Activity
         }
     }
 
-    public static final int NUM_OF_STAGES = 2;
+    public static final int NUM_OF_STAGES = 1;
     private ArrayList<Integer> couple;
     private ArrayList<PlaceHolder> mainList;
     private ArrayList<String> animalList;
@@ -154,6 +154,7 @@ public class GameActivity extends Activity
 
                         Intent intent = new Intent(this, ResultActivity.class);
                         startActivity(intent);
+                        finish();
                     }
                     else
                     {
