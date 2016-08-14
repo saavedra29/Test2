@@ -22,7 +22,7 @@
             android:layout_gravity="center_vertical"
             android:typeface="normal"
             android:textAlignment="center"
-            android:background="#dd025b45"/>
+            android:background="@drawable/rounded_corner"/>
         <Spinner
             android:id="@+id/stages_spinner"
             android:layout_width="wrap_content"
@@ -40,17 +40,20 @@
         android:layout_height="fill_parent"
         >
         <Button
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="@string/starting_button"
-            android:onClick="goToGame"
-            android:id="@+id/button2"
-            app:layout_gravity="center_horizontal"
-            android:layout_centerInParent="true"
-            android:layout_alignParentEnd="false"
-            >
+            android:id="@+id/angry_btn"
 
-        </Button>
+            android:text="Go"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#0BCF04"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="4"
+            android:layout_centerHorizontal="true"/>
 
     </RelativeLayout>
 
