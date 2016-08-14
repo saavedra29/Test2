@@ -65,7 +65,7 @@ public class GameActivity extends Activity
 
 
 
-    void myOnClick(View view)
+    public void myOnClick(View view)
     {
         if (gameState == 0)
         {
@@ -110,7 +110,7 @@ public class GameActivity extends Activity
         }
     }
 
-    void goToResult(View view)
+    public void goToResult(View view)
     {
         if (couple.size() == 2)
         {
