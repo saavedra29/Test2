@@ -7,25 +7,38 @@
     android:orientation="vertical"
     android:background="@drawable/introbackground"
     >
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1">
+        android:layout_height="363dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose number of stages: "
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:layout_weight="0.9"
+            android:layout_gravity="center_vertical"
+            android:typeface="normal"
+            android:textAlignment="center"
+            android:background="#dd025b45"/>
         <Spinner
             android:id="@+id/stages_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_gravity="center_horizontal"
-            android:layout_centerInParent="true"
             android:spinnerMode="dropdown"
-            android:prompt="@string/spinner_title"/>
-
-    </RelativeLayout>
+            android:prompt="@string/spinner_title"
+            android:layout_weight="0.1"
+            android:layout_gravity="center_vertical"
+            />
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="1">
+        >
         <Button
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
@@ -33,7 +46,9 @@
             android:onClick="goToGame"
             android:id="@+id/button2"
             app:layout_gravity="center_horizontal"
-            android:layout_centerInParent="true">
+            android:layout_centerInParent="true"
+            android:layout_alignParentEnd="false"
+            >
 
         </Button>
 
