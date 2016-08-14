@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     {
         Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
+
     }
 
     @Override
