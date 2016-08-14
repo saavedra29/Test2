@@ -33,7 +33,6 @@ public class GameActivity extends Activity
         }
     }
 
-    public static final int NUM_OF_STAGES = 2;
     private ArrayList<Integer> couple;
     private ArrayList<PlaceHolder> mainList;
     private ArrayList<String> animalList;
@@ -114,7 +113,7 @@ public class GameActivity extends Activity
     {
         if (couple.size() == 2)
         {
-            if ((invisibleObjects == imagesNumber - 2) && (counter == NUM_OF_STAGES))
+            if ((invisibleObjects == imagesNumber - 2) && (counter == MainActivity.stages))
             {
                 score = (String)chrono.getText();
                 chrono.stop();

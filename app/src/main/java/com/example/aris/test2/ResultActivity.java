@@ -2,8 +2,6 @@ package com.example.aris.test2;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class ResultActivity extends Activity
