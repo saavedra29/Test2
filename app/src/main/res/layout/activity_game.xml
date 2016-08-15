@@ -197,7 +197,8 @@
                       android:layout_margin="5sp"
                       android:layout_gravity="center"
                       android:textColor="#000000"
-                      android:textStyle="italic"/>
+                      android:textStyle="italic"
+                      android:id="@+id/round_indicator"/>
 
         </LinearLayout>
 

@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.os.SystemClock;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -192,6 +193,8 @@ public class GameActivity extends Activity
     {
         // INITIALIZE ALL THE VARIALBES
         counter++;
+        TextView round = (TextView)findViewById(R.id.round_indicator);
+        round.setText(Integer.toString(counter));
         animalList = new ArrayList<>(Arrays.asList("lion", "lion", "rhino",
                 "rhino", "chimpanzee", "chimpanzee", "giraffe", "giraffe", "hippopotamus",
                 "hippopotamus", "elephant", "elephant"));

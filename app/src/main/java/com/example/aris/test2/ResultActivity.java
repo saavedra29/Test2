@@ -36,15 +36,4 @@ public class ResultActivity extends Activity
 
     }
 
-
-    /*
-    public void restartGame(View view)
-    {
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        startActivity(intent);
-        finish();
-    }
-    */
-
 }
