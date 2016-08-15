@@ -1,45 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:orientation="vertical"
-                android:id="@+id/resultLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/finished_background">
+              android:id="@+id/resultLayout"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/finished_background_small"
+              android:clickable="true"
+              android:focusable="true"
+              android:focusableInTouchMode="true"
+              android:orientation="vertical">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Your score"
         android:id="@+id/result_label"
-        android:textSize="35sp"
-        android:textColor="#663300"
-        android:layout_weight="1"
-        android:textStyle="bold"
-        android:typeface="serif"
-        android:gravity="bottom|center"/>
-
-    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_weight="1"
+        android:gravity="bottom|center"
+        android:text="Your score"
+        android:textColor="#663300"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:typeface="serif"/>
+
+    <TextView
         android:id="@+id/score_output"
-        android:textColor="#000000"
-        android:text="score holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
         android:gravity="center"
+        android:text="score holder"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000"
         android:textSize="20sp"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Touch screen to replay"
             android:layout_alignParentTop="false"
             android:layout_centerHorizontal="true"
+            android:text="Touch screen to replay"
             android:textStyle="italic"/>
     </RelativeLayout>
 

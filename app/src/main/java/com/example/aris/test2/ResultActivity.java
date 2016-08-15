@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class ResultActivity extends Activity
@@ -20,7 +21,21 @@ public class ResultActivity extends Activity
         TextView text = (TextView)findViewById(R.id.score_output);
         text.setText(GameActivity.score);
 
+        LinearLayout l = (LinearLayout)findViewById(R.id.resultLayout);
+        l.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
+
 
     /*
     public void restartGame(View view)
