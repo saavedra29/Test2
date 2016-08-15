@@ -164,7 +164,7 @@ public class GameActivity extends Activity
                 for (int i = couple.size() - 1; i >= 0; i--)
                 {
                     ImageButton v = (ImageButton) findViewById(couple.get(i));
-                    v.setImageResource(getResources().getIdentifier("back", "drawable", getPackageName()));
+                    v.setImageResource(getResources().getIdentifier("cover", "drawable", getPackageName()));
                 }
                 couple.clear();
                 gameState = 0;
@@ -181,7 +181,7 @@ public class GameActivity extends Activity
             String imageString = animalList.remove(0);
             int resID = getResources().getIdentifier(imageString, "drawable", getPackageName());
             nextChild.setImageResource(getResources().getIdentifier(
-                    "back", "drawable", getPackageName()));
+                    "cover", "drawable", getPackageName()));
             PlaceHolder placeHolder = new PlaceHolder(imageString, false, nextChild.getId(), i, resID);
             mainList.add(placeHolder);
 

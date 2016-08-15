@@ -4,6 +4,7 @@
     <string name="game_message">Welcome to the game</string>
     <string name="result"></string>
     <string name="spinner_title">Number of stages</string>
+    <string name="resetPrompt">Touch the screen to replay</string>
     <string-array name="stages_array">
         <item>1</item>
         <item>2</item>
