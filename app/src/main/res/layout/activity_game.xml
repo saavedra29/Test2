@@ -181,7 +181,6 @@
         <LinearLayout android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:orientation="vertical"
-                      app:layout_columnWeight="1"
                       app:layout_gravity="center">
             <TextView android:text="Round"
                       android:layout_width="wrap_content"
@@ -206,19 +205,16 @@
                 android:text="OK"
                 android:onClick="goToResult"
                 android:id="@+id/ok_button"
-                app:layout_columnWeight="1"
-                android:width="200dp"
                 android:height="65dp"
                 app:layout_gravity="fill"/>
 
         <com.example.aris.test2.MChronometer
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_columnWeight="1"
-            android:layout_margin="10dp"
-            android:textSize="24sp"
+            android:textSize="20dp"
             android:id="@+id/chronometer"
-            app:layout_gravity="center"/>
+            android:width="80dp"
+            app:layout_gravity="center_vertical"/>
     </android.support.v7.widget.GridLayout>
 
 
