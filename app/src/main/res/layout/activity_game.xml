@@ -208,7 +208,7 @@
                 android:id="@+id/ok_button"
                 app:layout_columnWeight="1"
                 android:width="200dp"
-                android:height="60dp"
+                android:height="65dp"
                 app:layout_gravity="fill"/>
 
         <com.example.aris.test2.MChronometer
