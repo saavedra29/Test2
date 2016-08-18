@@ -17,23 +17,18 @@ public class GameActivity extends Activity
 {
     class PlaceHolder
     {
-        public String animalName;
-        public boolean visible;
         public int id;
-        public int index;
         public int imageId;
 
-        public PlaceHolder(String animalName, boolean visible, int id, int index, int imageId)
+        public PlaceHolder(int imageButtonId, int imageId)
         {
-            this.animalName = animalName;
-            this.visible = visible;
-            this.id = id;
-            this.index = index;
+            this.id = imageButtonId;
             this.imageId = imageId;
         }
     }
 
-    private ArrayList<Integer> couple;
+    private ArrayList<Integer> newCouple;
+    private ArrayList<Integer> oldCouple;
     private ArrayList<PlaceHolder> mainList;
     private ArrayList<String> animalList;
     static int counter;
@@ -79,7 +74,7 @@ public class GameActivity extends Activity
                     ImageButton button = (ImageButton)findViewById(view.getId());
                     button.setImageResource(mainList.get(i).imageId);
                     // Add the image to the viewable images
-                    couple.add(0, tmpId);
+                    newCouple.add(0, tmpId);
                     // Add 1 to the game state
                     ++gameState;
                 }
@@ -89,7 +84,7 @@ public class GameActivity extends Activity
         {
             // Change the cover image with the real image
             int id = view.getId();
-            if (id != couple.get(0))
+            if (id != newCouple.get(0))
             {
                 for (int i = 0; i < imagesNumber; i++)
                 {
@@ -100,7 +95,7 @@ public class GameActivity extends Activity
                         ImageButton button = (ImageButton) findViewById(view.getId());
                         button.setImageResource(mainList.get(i).imageId);
                         // Add the image to the viewable images
-                        couple.add(1, tmpId);
+                        newCouple.add(1, tmpId);
                         // Add 1 to the game state
                         ++gameState;
                     }
@@ -111,7 +106,7 @@ public class GameActivity extends Activity
 
     public void goToResult(View view)
     {
-        if (couple.size() == 2)
+        if (newCouple.size() == 2)
         {
             if ((invisibleObjects == imagesNumber - 2) && (counter == MainActivity.stages))
             {
@@ -126,25 +121,25 @@ public class GameActivity extends Activity
             {
                 ImageButton button1 = null;
                 ImageButton button2 = null;
-                String animalName1 = null;
-                String animalName2 = null;
+                int imageId1 = 0;
+                int imageId2 = 1;
 
-                // Check for couple of same images
+                // Check for Couple of same images
                 for (int i = 0; i < imagesNumber; i++)
                 {
-                    if (mainList.get(i).id == couple.get(0))
+                    if (mainList.get(i).id == newCouple.get(0))
                     {
                         button1 = (ImageButton)findViewById(mainList.get(i).id);
-                        animalName1 = mainList.get(i).animalName;
+                        imageId1 = mainList.get(i).imageId;
                     }
-                    if (mainList.get(i).id == couple.get(1))
+                    if (mainList.get(i).id == newCouple.get(1))
                     {
                         button2 = (ImageButton)findViewById(mainList.get(i).id);
-                        animalName2 = mainList.get(i).animalName;
+                        imageId2 = mainList.get(i).imageId;
                     }
                 }
 
-                if (animalName1 == animalName2)
+                if (imageId1 == imageId2)
                 {
                     // We got a pair
                     assert button1 != null;
@@ -161,12 +156,12 @@ public class GameActivity extends Activity
 
 
                 // Change the cover image back to cover
-                for (int i = couple.size() - 1; i >= 0; i--)
+                for (int i = newCouple.size() - 1; i >= 0; i--)
                 {
-                    ImageButton v = (ImageButton) findViewById(couple.get(i));
+                    ImageButton v = (ImageButton) findViewById(newCouple.get(i));
                     v.setImageResource(getResources().getIdentifier("cover", "drawable", getPackageName()));
                 }
-                couple.clear();
+                newCouple.clear();
                 gameState = 0;
 
             }
@@ -182,7 +177,7 @@ public class GameActivity extends Activity
             int resID = getResources().getIdentifier(imageString, "drawable", getPackageName());
             nextChild.setImageResource(getResources().getIdentifier(
                     "cover", "drawable", getPackageName()));
-            PlaceHolder placeHolder = new PlaceHolder(imageString, false, nextChild.getId(), i, resID);
+            PlaceHolder placeHolder = new PlaceHolder(nextChild.getId(), resID);
             mainList.add(placeHolder);
 
         }
@@ -198,7 +193,8 @@ public class GameActivity extends Activity
                 "rhino", "chimpanzee", "chimpanzee", "giraffe", "giraffe", "hippopotamus",
                 "hippopotamus", "elephant", "elephant"));
         Collections.shuffle(animalList);
-        couple = new ArrayList<>();
+        newCouple = new ArrayList<>();
+        oldCouple = new ArrayList<>();
         mainList = new ArrayList<>();
         gameState = 0;
         v = (ViewGroup)findViewById(R.id.imagesLayout);

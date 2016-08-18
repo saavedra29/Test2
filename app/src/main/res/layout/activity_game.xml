@@ -176,7 +176,7 @@
 
     <android.support.v7.widget.GridLayout android:layout_height="wrap_content" android:layout_width="match_parent"
                                           app:columnCount="3" app:rowCount="1"
-                                          android:layout_weight="1.4"
+                                          android:layout_weight="1"
                                           android:focusable="false">
         <LinearLayout android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
