@@ -175,46 +175,43 @@
     </android.support.v7.widget.GridLayout>
 
     <android.support.v7.widget.GridLayout android:layout_height="wrap_content" android:layout_width="match_parent"
-                                          app:columnCount="3" app:rowCount="1"
+                                          app:columnCount="2" app:rowCount="1"
                                           android:layout_weight="1"
                                           android:focusable="false">
         <LinearLayout android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:orientation="vertical"
-                      app:layout_gravity="center">
+                      android:orientation="horizontal"
+                      app:layout_gravity="left|center_vertical"
+                      android:padding="10dp">
             <TextView android:text="Round"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       app:layout_columnWeight="1"
                       android:layout_margin="5sp"
-                      android:layout_gravity="center"
-                      android:textColor="#000000"/>
-
-            <TextView android:text="2"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      app:layout_columnWeight="1"
-                      android:layout_margin="5sp"
-                      android:layout_gravity="center"
+                      android:layout_gravity="center_vertical"
                       android:textColor="#000000"
-                      android:id="@+id/round_indicator"/>
+                      android:textSize="20sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_columnWeight="1"
+                android:layout_margin="5sp"
+                android:layout_gravity="center_vertical"
+                android:textColor="#000000"
+                android:id="@+id/round_indicator"
+                android:text="0"
+                android:textSize="20sp"/>
 
         </LinearLayout>
-
-        <Button android:layout_height="wrap_content" android:layout_width="wrap_content"
-                android:text="OK"
-                android:onClick="goToResult"
-                android:id="@+id/ok_button"
-                android:height="65dp"
-                app:layout_gravity="fill"/>
 
         <com.example.aris.test2.MChronometer
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
             android:id="@+id/chronometer"
-            android:width="80dp"
-            app:layout_gravity="center_vertical"/>
+            android:textSize="25sp"
+            app:layout_gravity="center_vertical|right"
+            android:padding="10dp"/>
     </android.support.v7.widget.GridLayout>
 
 
