@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.aris.test2">
-    <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="24" />
+    <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="24" />
     <supports-screens android:smallScreens="false"
                       android:normalScreens="true"
                       android:largeScreens="true"

@@ -12,7 +12,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Objects;
 
 public class GameActivity extends Activity
 {
@@ -145,7 +144,7 @@ public class GameActivity extends Activity
                     }
                 }
 
-                if (Objects.equals(animalName1, animalName2))
+                if (animalName1 == animalName2)
                 {
                     // We got a pair
                     assert button1 != null;
