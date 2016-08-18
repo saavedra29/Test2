@@ -17,12 +17,12 @@ public class GameActivity extends Activity
 {
     class PlaceHolder
     {
-        public int id;
+        public int imageButtonId;
         public int imageId;
 
         public PlaceHolder(int imageButtonId, int imageId)
         {
-            this.id = imageButtonId;
+            this.imageButtonId = imageButtonId;
             this.imageId = imageId;
         }
     }
@@ -63,11 +63,13 @@ public class GameActivity extends Activity
     {
         if (gameState == 0)
         {
+            // Check for end game
+            // Check for couple
             // Change the cover image with the real image
             int id = view.getId();
             for (int i = 0; i < imagesNumber; i++)
             {
-                int tmpId = mainList.get(i).id;
+                int tmpId = mainList.get(i).imageButtonId;
                 if (id == tmpId)
                 {
 
@@ -88,7 +90,7 @@ public class GameActivity extends Activity
             {
                 for (int i = 0; i < imagesNumber; i++)
                 {
-                    int tmpId = mainList.get(i).id;
+                    int tmpId = mainList.get(i).imageButtonId;
                     if (id == tmpId)
                     {
 
@@ -127,14 +129,14 @@ public class GameActivity extends Activity
                 // Check for Couple of same images
                 for (int i = 0; i < imagesNumber; i++)
                 {
-                    if (mainList.get(i).id == newCouple.get(0))
+                    if (mainList.get(i).imageButtonId == newCouple.get(0))
                     {
-                        button1 = (ImageButton)findViewById(mainList.get(i).id);
+                        button1 = (ImageButton)findViewById(mainList.get(i).imageButtonId);
                         imageId1 = mainList.get(i).imageId;
                     }
-                    if (mainList.get(i).id == newCouple.get(1))
+                    if (mainList.get(i).imageButtonId == newCouple.get(1))
                     {
-                        button2 = (ImageButton)findViewById(mainList.get(i).id);
+                        button2 = (ImageButton)findViewById(mainList.get(i).imageButtonId);
                         imageId2 = mainList.get(i).imageId;
                     }
                 }
