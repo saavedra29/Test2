@@ -2,7 +2,6 @@ package com.example.aris.test2;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,14 +18,13 @@ import java.util.Map;
 public class GameActivity extends Activity
 {
     private MChronometer chrono;
-    private int stage;
     private ArrayList<Integer> couple = new ArrayList<>();
     private ArrayList<String> animalList;
     private HashMap<Integer, Integer> relation = new HashMap<>();
     private ViewGroup layoutView;
     static int round;
     static String score;
-    private int gameState;
+    private boolean gameState;
     private int imagesNumber;
     private int invisibleObjects;
     // chronometer related variables
@@ -57,7 +55,7 @@ public class GameActivity extends Activity
         // Method called when an imageButton is pressed
 
         // Check the stage
-        if ((stage == 0) && (!couple.contains(view.getId())))
+        if ((!gameState) && (!couple.contains(view.getId())))
         {
             // Check the couple for same elements
             for (Map.Entry<Integer, Integer> entry: relation.entrySet())
@@ -90,11 +88,14 @@ public class GameActivity extends Activity
             }
 
             // Change couple images back to cover
-            for (int i = couple.size() - 1; i >= 0; i--)
+            for (int i = 1; i >= 0; i--)
             {
                 ImageButton button = (ImageButton)findViewById(couple.get(i));
-                button.setImageResource(getResources().getIdentifier("cover", "drawable",
-                        getPackageName()));
+                if (button != null)
+                {
+                    button.setImageResource(getResources().getIdentifier("cover", "drawable",
+                            getPackageName()));
+                }
             }
             couple.clear();
             // Add current selected image to couple
@@ -103,6 +104,7 @@ public class GameActivity extends Activity
             ImageButton tmpButton = (ImageButton)view;
             int tmpImageId = relation.get(view.getId());
             tmpButton.setImageResource(tmpImageId);
+            gameState = true;
 
         }
         else
@@ -130,7 +132,7 @@ public class GameActivity extends Activity
                 {
                     initStage();
                 }
-
+                gameState = false;
             }
         }
     }
@@ -150,9 +152,11 @@ public class GameActivity extends Activity
         Collections.shuffle(animalList);
         // Some variables to reinitialize
         couple = new ArrayList<>();
+        couple.add(0, 0);
+        couple.add(1, 1);
         relation = new HashMap<Integer, Integer>();
         invisibleObjects = 0;
-        gameState = 0;
+        gameState = false;
         // Set all the images visible
         layoutView = (ViewGroup)findViewById(R.id.imagesLayout);
         imagesNumber = layoutView.getChildCount();
