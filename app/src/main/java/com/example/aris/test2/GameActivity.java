@@ -57,7 +57,7 @@ public class GameActivity extends Activity
         // Method called when an imageButton is pressed
 
         // Check the stage
-        if (stage == 0)
+        if ((stage == 0) && (!couple.contains(view.getId())))
         {
             // Check the couple for same elements
             for (Map.Entry<Integer, Integer> entry: relation.entrySet())
@@ -111,10 +111,25 @@ public class GameActivity extends Activity
             int id = view.getId();
             if (id != couple.get(0));
             {
+                // Turn the current image
                 ImageButton tmpButton = (ImageButton)view;
                 int tmpImageId = relation.get(view.getId());
                 tmpButton.setImageResource(tmpImageId);
+                // Add it to couple second position
                 couple.add(1, id);
+                // Check for end of game
+                if ((invisibleObjects == imagesNumber - 2) && (round == MainActivity.stages))
+                {
+                    score = (String)chrono.getText();
+                    chrono.stop();
+                    Intent intent = new Intent(this, ResultActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else if (invisibleObjects == imagesNumber - 2)
+                {
+                    initStage();
+                }
 
             }
         }
