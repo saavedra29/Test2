@@ -116,7 +116,7 @@
             android:src="@drawable/cover"
             android:scaleType="fitCenter"
             android:id="@+id/image8"
-            android:onClick="myOnClick"
+            android:onClick="imageClick"
             android:background="#00000000"
             android:padding="10dip"/>
 
