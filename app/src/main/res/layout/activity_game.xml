@@ -10,8 +10,8 @@
     <android.support.v7.widget.GridLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:columnCount="3"
-        app:rowCount="4"
+        app:columnCount="4"
+        app:rowCount="5"
         android:id="@+id/imagesLayout"
         android:layout_weight="1">
 
@@ -168,6 +168,110 @@
             android:src="@drawable/cover"
             android:scaleType="fitCenter"
             android:id="@+id/image12"
+            android:onClick="imageClick"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 13"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/cover"
+            android:scaleType="fitCenter"
+            android:id="@+id/image13"
+            android:onClick="imageClick"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 14"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/cover"
+            android:scaleType="fitCenter"
+            android:id="@+id/image14"
+            android:onClick="imageClick"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 15"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/cover"
+            android:scaleType="fitCenter"
+            android:id="@+id/image15"
+            android:onClick="imageClick"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 16"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/cover"
+            android:scaleType="fitCenter"
+            android:id="@+id/image16"
+            android:onClick="imageClick"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 17"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/cover"
+            android:scaleType="fitCenter"
+            android:id="@+id/image17"
+            android:onClick="imageClick"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 18"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/cover"
+            android:scaleType="fitCenter"
+            android:id="@+id/image18"
+            android:onClick="imageClick"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 19"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/cover"
+            android:scaleType="fitCenter"
+            android:id="@+id/image19"
+            android:onClick="imageClick"
+            android:background="#00000000"
+            android:padding="10dip"/>
+
+        <ImageButton
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="image button 20"
+            app:layout_rowWeight="1"
+            app:layout_columnWeight="1"
+            android:src="@drawable/cover"
+            android:scaleType="fitCenter"
+            android:id="@+id/image20"
             android:onClick="imageClick"
             android:background="#00000000"
             android:padding="10dip"/>

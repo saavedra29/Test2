@@ -155,7 +155,8 @@ public class GameActivity extends Activity
         // Create list of animal names and shuffle it
         animalList = new ArrayList<>(Arrays.asList("lion", "lion", "rhino",
                 "rhino", "chimpanzee", "chimpanzee", "giraffe", "giraffe", "hippopotamus",
-                "hippopotamus", "elephant", "elephant"));
+                "hippopotamus", "elephant", "elephant", "cheetah", "cheetah", "gazelle",
+                "gazelle", "gnu", "gnu", "zebra", "zebra"));
         Collections.shuffle(animalList);
         // Some variables to reinitialize
         couple = new ArrayList<>();
