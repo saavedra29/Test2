@@ -27,7 +27,7 @@
             android:onClick="imageClick"
             android:cropToPadding="false"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
         <ImageButton
             android:layout_width="50dip"
@@ -39,7 +39,7 @@
             android:id="@+id/image2"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"
+            android:padding="3dip"
             android:scaleType="fitCenter"/>
 
         <ImageButton
@@ -53,7 +53,7 @@
             android:id="@+id/image3"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
         <ImageButton
             android:layout_width="50dip"
@@ -66,7 +66,7 @@
             android:id="@+id/image4"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
         <ImageButton
             android:layout_width="50dip"
@@ -79,7 +79,7 @@
             android:id="@+id/image5"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
         <ImageButton
             android:layout_width="50dip"
@@ -92,7 +92,7 @@
             android:id="@+id/image6"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
         <ImageButton
             android:layout_width="50dip"
@@ -105,7 +105,7 @@
             android:id="@+id/image7"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
         <ImageButton
             android:layout_width="50dip"
@@ -118,7 +118,7 @@
             android:id="@+id/image8"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
         <ImageButton
             android:layout_width="50dip"
@@ -131,7 +131,7 @@
             android:id="@+id/image9"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
         <ImageButton
             android:layout_width="50dip"
@@ -144,7 +144,7 @@
             android:id="@+id/image10"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
         <ImageButton
             android:layout_width="50dip"
@@ -157,7 +157,7 @@
             android:id="@+id/image11"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
         <ImageButton
             android:layout_width="50dip"
@@ -170,7 +170,7 @@
             android:id="@+id/image12"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
         <ImageButton
             android:layout_width="50dip"
@@ -183,7 +183,7 @@
             android:id="@+id/image13"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
         <ImageButton
             android:layout_width="50dip"
@@ -196,7 +196,7 @@
             android:id="@+id/image14"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
         <ImageButton
             android:layout_width="50dip"
@@ -209,7 +209,7 @@
             android:id="@+id/image15"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
         <ImageButton
             android:layout_width="50dip"
@@ -222,7 +222,7 @@
             android:id="@+id/image16"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
         <ImageButton
             android:layout_width="50dip"
@@ -235,7 +235,7 @@
             android:id="@+id/image17"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
         <ImageButton
             android:layout_width="50dip"
@@ -248,7 +248,7 @@
             android:id="@+id/image18"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
         <ImageButton
             android:layout_width="50dip"
@@ -261,7 +261,7 @@
             android:id="@+id/image19"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
         <ImageButton
             android:layout_width="50dip"
@@ -274,7 +274,7 @@
             android:id="@+id/image20"
             android:onClick="imageClick"
             android:background="#00000000"
-            android:padding="10dip"/>
+            android:padding="3dip"/>
 
     </android.support.v7.widget.GridLayout>
 
