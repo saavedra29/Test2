@@ -2,9 +2,11 @@
     <string name="app_name">Elephant Memory</string>
     <string name="starting_button">Go</string>
     <string name="game_message">Welcome to the game</string>
-    <string name="result"></string>
     <string name="spinner_title">Number of stages</string>
     <string name="resetPrompt">Touch the screen to replay</string>
+    <string name="menu_settings">Settings</string>
+    <string name="highScoreLabel">Highscores</string>
+    <string name="aboutLabel">About</string>
     <string-array name="stages_array">
         <item>1</item>
         <item>2</item>

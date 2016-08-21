@@ -69,15 +69,13 @@ public class GameActivity extends Activity
                     if (buttonId == couple.get(0))
                     {
                         button1 = (ImageButton)findViewById(buttonId);
-                        int imageId = entry.getValue();
-                        imageId1 = imageId;
+                        imageId1 = entry.getValue();
                     }
 
                     if (buttonId == couple.get(1))
                     {
                         button2 = (ImageButton)findViewById(buttonId);
-                        int imageId = entry.getValue();
-                        imageId2 = imageId;
+                        imageId2 = entry.getValue();
                     }
                 }
 
