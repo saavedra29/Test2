@@ -64,14 +64,16 @@
                 android:layout_margin="3dp"
                 android:textColor="#FFFFFF"
                 android:text="Ok"
-                android:textSize="17dp"/>
+                android:textSize="17sp"
+                android:onClick="acceptRounds"/>
         <Button app:layout_columnWeight="1"
                 android:background="@drawable/okcancel_button_sel"
                 app:layout_gravity="bottom"
                 android:layout_margin="3dp"
                 android:text="Cancel"
                 android:textColor="#FFFFFF"
-                android:textSize="17dp"/>
+                android:textSize="17sp"
+                android:onClick="cancelRounds"/>
 
     </android.support.v7.widget.GridLayout>
 </RelativeLayout>

@@ -124,7 +124,7 @@ public class GameActivity extends Activity
                 // Add it to couple second position
                 couple.add(1, id);
                 // Check for end of game
-                if ((invisibleObjects == imagesNumber - 2) && (round == MainActivity.stages))
+                if ((invisibleObjects == imagesNumber - 2) && (round == MainActivity.rounds))
                 {
                     score = (String)chrono.getText();
                     chrono.stop();

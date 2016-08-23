@@ -1,14 +1,16 @@
 package com.saavedra29.aris.test2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class SettingsActivity extends AppCompatActivity
 {
 
-    private SeekBar seekBar;
+    private int progress = MainActivity.rounds;
     private TextView textView;
 
     @Override
@@ -18,13 +20,12 @@ public class SettingsActivity extends AppCompatActivity
         setContentView(R.layout.activity_settings);
 
         textView = (TextView)findViewById(R.id.seekView);
-        seekBar = (SeekBar)findViewById(R.id.seekBar);
-        final int max = seekBar.getMax() + 1;
+        SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
+        seekBar.setProgress(MainActivity.rounds - 1);
 
-        textView.setText("Rounds: " + 1);
+        textView.setText("Rounds: " + MainActivity.rounds);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
         {
-            int progress = 1;
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser)
@@ -39,10 +40,25 @@ public class SettingsActivity extends AppCompatActivity
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                //textView.setText("Covered: " + progress + "/" + max);
-
             }
 
         });
+    }
+
+    public void acceptRounds(View view)
+    {
+        MainActivity.rounds = progress;
+        Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(intent);
+        finish();
+    }
+
+    public void cancelRounds(View view)
+    {
+        Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(intent);
+        finish();
     }
 }

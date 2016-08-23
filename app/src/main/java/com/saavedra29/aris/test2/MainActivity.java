@@ -8,14 +8,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.SeekBar;
-import android.widget.Spinner;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
+public class MainActivity extends AppCompatActivity
 {
-    public static int stages;
+    public static int rounds = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -24,15 +20,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
         Toolbar myToolbar = (Toolbar)findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-
-
-        // Create the spinner
-        Spinner spinner = (Spinner) findViewById(R.id.stages_spinner);
-        ArrayAdapter<CharSequence> dataAdapter =ArrayAdapter.createFromResource(this,
-                R.array.stages_array, android.R.layout.simple_spinner_item);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(dataAdapter);
-        spinner.setOnItemSelectedListener(this);
 
     }
 
@@ -48,18 +35,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     {
         Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
-
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l)
-    {
-        stages = Integer.parseInt(adapterView.getItemAtPosition(pos).toString());
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView)
-    {
 
     }
 

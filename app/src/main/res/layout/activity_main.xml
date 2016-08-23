@@ -16,34 +16,6 @@
         android:theme="@style/AppTheme"
         />
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="333dp"
-        android:orientation="horizontal"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Choose number of stages: "
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:layout_weight="0.9"
-            android:layout_gravity="center_vertical"
-            android:typeface="normal"
-            android:textAlignment="center"
-            android:background="@drawable/rounded_corner"/>
-        <Spinner
-            android:id="@+id/stages_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_gravity="center_horizontal"
-            android:spinnerMode="dropdown"
-            android:prompt="@string/spinner_title"
-            android:layout_weight="0.1"
-            android:layout_gravity="center_vertical"
-            />
-    </LinearLayout>
-
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -62,8 +34,8 @@
             android:shadowDx="3"
             android:shadowDy="3"
             android:shadowRadius="4"
-            android:layout_centerHorizontal="true"
-            android:onClick="goToGame"/>
+            android:onClick="goToGame"
+            android:layout_centerInParent="true"/>
     </RelativeLayout>
 
 
