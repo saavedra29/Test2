@@ -149,7 +149,7 @@ public class GameActivity extends Activity
         round++;
         // Set new text for the round indicator
         TextView indicator = (TextView)findViewById(R.id.round_indicator);
-        indicator.setText(Integer.toString(round));
+        indicator.setText(Integer.toString(round) + "/" + MainActivity.rounds);
         // Create list of animal names and shuffle it
         animalList = new ArrayList<>(Arrays.asList("lion", "lion", "rhino",
                 "rhino", "chimpanzee", "chimpanzee", "giraffe", "giraffe", "hippopotamus",
