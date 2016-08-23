@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SettingsActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
         android:layout_width="match_parent"
@@ -61,9 +59,19 @@
         android:layout_alignWithParentIfMissing="false">
 
         <Button app:layout_columnWeight="1"
-                app:layout_gravity="bottom"/>
+                android:background="@drawable/okcancel_button_sel"
+                app:layout_gravity="bottom"
+                android:layout_margin="3dp"
+                android:textColor="#FFFFFF"
+                android:text="Ok"
+                android:textSize="17dp"/>
         <Button app:layout_columnWeight="1"
-                app:layout_gravity="bottom"/>
+                android:background="@drawable/okcancel_button_sel"
+                app:layout_gravity="bottom"
+                android:layout_margin="3dp"
+                android:text="Cancel"
+                android:textColor="#FFFFFF"
+                android:textSize="17dp"/>
 
     </android.support.v7.widget.GridLayout>
 </RelativeLayout>
