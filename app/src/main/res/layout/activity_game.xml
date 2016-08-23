@@ -309,7 +309,7 @@
 
         </LinearLayout>
 
-        <com.example.aris.test2.MChronometer
+        <com.saavedra29.aris.test2.MChronometer
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/chronometer"

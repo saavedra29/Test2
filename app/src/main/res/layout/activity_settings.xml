@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SettingsActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Settings"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="false"
+        android:padding="10dp"
+        android:background="?attr/colorPrimary"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Select how many rounds you want to play each time."
+        android:id="@+id/textView2"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="28dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/seekView"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"/>
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="120dp"
+        android:id="@+id/seekBar"
+        android:layout_below="@+id/seekView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:progress="0"
+        android:max="4"/>
+
+    <android.support.v7.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:columnCount="2"
+        app:rowCount="1"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/seekBar"
+        android:layout_alignParentBottom="false"
+        android:layout_alignWithParentIfMissing="false">
+
+        <Button app:layout_columnWeight="1"
+                app:layout_gravity="bottom"/>
+        <Button app:layout_columnWeight="1"
+                app:layout_gravity="bottom"/>
+
+    </android.support.v7.widget.GridLayout>
+</RelativeLayout>

@@ -1,7 +1,7 @@
 /**
  * Created by aris on 8/12/16.
  */
-package com.example.aris.test2;
+package com.saavedra29.aris.test2;
 
 
 /*

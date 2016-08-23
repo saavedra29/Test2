@@ -1,4 +1,4 @@
-package com.example.aris.test2;
+package com.saavedra29.aris.test2;
 
 import org.junit.Test;
 

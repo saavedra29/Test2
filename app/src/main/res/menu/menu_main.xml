@@ -3,14 +3,17 @@
       xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/menu_settings"
           android:title="@string/menu_settings"
+          android:onClick="showSettings"
           app:showAsAction="never">
     </item>
     <item android:id="@+id/highscores"
           android:title="@string/highScoreLabel"
+          android:onClick="showHighScores"
           app:showAsAction="never">
     </item>
     <item android:id="@+id/about"
           android:title="@string/aboutLabel"
+          android:onClick="showAbout"
           app:showAsAction="never">
     </item>
 
