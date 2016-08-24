@@ -12,6 +12,7 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity
 {
     public static int rounds = 1;
+    public static long scoreLong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)

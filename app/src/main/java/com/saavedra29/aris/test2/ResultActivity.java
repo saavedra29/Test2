@@ -2,6 +2,7 @@ package com.saavedra29.aris.test2;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -18,8 +19,15 @@ public class ResultActivity extends Activity
         TextView tx = (TextView)findViewById(R.id.result_label);
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/wood.ttf");
         tx.setTypeface(custom_font);
+
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences(
+                "Highscores", MODE_PRIVATE
+        );
+        String highscoreStr = preferences.getString(Integer.toString(MainActivity.rounds) + "_str",
+                "00:00:0");
+
         TextView text = (TextView)findViewById(R.id.score_output);
-        text.setText(GameActivity.score);
+        text.setText("Current score: " + GameActivity.score + "\nHighscore: " + highscoreStr);
 
         LinearLayout l = (LinearLayout)findViewById(R.id.resultLayout);
         l.setOnClickListener(new View.OnClickListener()

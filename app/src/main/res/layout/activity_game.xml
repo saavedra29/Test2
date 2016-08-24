@@ -279,7 +279,7 @@
     </android.support.v7.widget.GridLayout>
 
     <android.support.v7.widget.GridLayout android:layout_height="wrap_content" android:layout_width="match_parent"
-                                          app:columnCount="2" app:rowCount="1"
+                                          app:columnCount="3" app:rowCount="1"
                                           android:layout_weight="1"
                                           android:focusable="false">
         <LinearLayout android:layout_width="wrap_content"
@@ -308,6 +308,10 @@
                 android:textSize="20sp"/>
 
         </LinearLayout>
+        <Button android:onClick="endGame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            />
 
         <com.saavedra29.aris.test2.MChronometer
             android:layout_width="wrap_content"

@@ -2,7 +2,9 @@ package com.saavedra29.aris.test2;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -25,6 +27,7 @@ public class GameActivity extends Activity
     private ViewGroup layoutView;
     static int round;
     static String score;
+    static long scoreLong;
     private boolean gameState;
     private int imagesNumber;
     private int invisibleObjects;
@@ -126,8 +129,10 @@ public class GameActivity extends Activity
                 // Check for end of game
                 if ((invisibleObjects == imagesNumber - 2) && (round == MainActivity.rounds))
                 {
-                    score = (String)chrono.getText();
                     chrono.stop();
+                    score = (String)chrono.getText();
+                    // Create preferences to check if highscore and save
+                    checkHighscore();
                     Intent intent = new Intent(this, ResultActivity.class);
                     startActivity(intent);
                     finish();
@@ -204,6 +209,35 @@ public class GameActivity extends Activity
         difference = timeAfterStop - timeBeforeStop;
         chrono.setBase(chrono.getBase() + difference);
         chrono.start();
+    }
+
+    private void checkHighscore()
+    {
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences(
+                "Highscores", MODE_PRIVATE
+        );
+        SharedPreferences.Editor editor = preferences.edit();
+
+        long tmpScore = preferences.getLong(Integer.toString(MainActivity.rounds),
+                MainActivity.scoreLong + 1);
+
+        if (tmpScore > MainActivity.scoreLong)
+        {
+            editor.putLong(Integer.toString(MainActivity.rounds), MainActivity.scoreLong);
+            editor.putString(Integer.toString(MainActivity.rounds) + "_str", score);
+        }
+        editor.apply();
+    }
+
+    public void endGame(View view)
+    {
+        chrono.stop();
+        score = (String)chrono.getText();
+        // Create preferences to check if highscore and save
+        checkHighscore();
+        Intent intent = new Intent(this, ResultActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
 
