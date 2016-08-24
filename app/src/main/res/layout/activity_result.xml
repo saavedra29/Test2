@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:id="@+id/resultLayout"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
@@ -13,34 +14,112 @@
         android:id="@+id/result_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="0.74"
         android:gravity="bottom|center"
         android:text="Your score"
         android:textColor="#663300"
         android:textSize="35sp"
         android:textStyle="bold"
-        android:typeface="serif"/>
+        android:typeface="serif"
+        android:padding="20dp"/>
 
-    <TextView
-        android:id="@+id/score_output"
+    <android.support.v7.widget.GridLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_height="0dp"
+        app:columnCount="2"
+        app:rowCount="3"
+        app:layout_weight="1"
         android:layout_weight="1"
-        android:lineSpacingMultiplier="1.2"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:text="The new score: 00:12:2\nThe old one: 00:02:1"
-        android:gravity="center_vertical"
-        android:elegantTextHeight="false"
-        android:paddingLeft="50sp"
-        android:textStyle="italic"/>
+        app:rowOrderPreserved="false"
+        app:useDefaultMargins="false"
+        >
+
+        <TextView
+            android:id="@+id/score_output0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_columnSpan="2"
+            android:layout_weight="1"
+            android:lineSpacingMultiplier="1.2"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#fd2f2f"
+            android:textSize="21sp"
+            android:text="Congrutulations! New highscore!"
+            android:textStyle="italic"
+            app:layout_columnWeight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:padding="10dp"
+            />
+
+        <TextView
+            android:id="@+id/score_output"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:lineSpacingMultiplier="1.2"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:text="Score:"
+            android:textStyle="italic"
+            app:layout_columnWeight="1"
+            android:gravity="center_vertical|right"
+            android:padding="10dp"
+            />
+
+        <TextView
+            android:id="@+id/score_output2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:lineSpacingMultiplier="1.2"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:text="00:00:1"
+            android:textStyle="italic"
+            app:layout_columnWeight="1"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            />
+
+        <TextView
+            android:id="@+id/score_output3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:lineSpacingMultiplier="1.2"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:text="Highscore:"
+            android:textStyle="italic"
+            app:layout_columnWeight="1"
+            android:gravity="center_vertical|right"
+            android:padding="10dp"
+            />
+
+        <TextView
+            android:id="@+id/score_output4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:lineSpacingMultiplier="1.2"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:text="00:02:3"
+            android:textStyle="italic"
+            app:layout_columnWeight="1"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            />
+    </android.support.v7.widget.GridLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_weight="0.69">
 
         <TextView
             android:layout_width="wrap_content"
