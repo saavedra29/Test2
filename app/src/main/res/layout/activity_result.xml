@@ -27,10 +27,15 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
-        android:gravity="center"
+        android:lineSpacingMultiplier="1.2"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:text="The new score: 00:12:2\nThe old one: 00:02:1"
+        android:gravity="center_vertical"
+        android:elegantTextHeight="false"
+        android:paddingLeft="50sp"
+        android:textStyle="italic"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
