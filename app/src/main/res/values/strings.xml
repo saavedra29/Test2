@@ -7,6 +7,22 @@
     <string name="menu_settings">Rounds</string>
     <string name="highScoreLabel">Highscores</string>
     <string name="aboutLabel">About</string>
+    <string name="aboutText">
+        A simple game for improving your memory\n
+        and compete against your friends. You simply\n
+        have to find and match the pairs in order to\n
+        \"empty\" the table as fast as possible. At\n
+        the upper right menu you can select how\n
+        many rounds to play each time, see the saved\n
+        highscores and reset them if you want. If\n
+        at any time the game loses focus by another\n
+        application or minimizes afterwards the\n
+        chronometer continues from the exact point\n
+        it was left.\n
+        Enjoy, review, comment and share. Thanks\n
+        for trying the application!\n\n
+        Author: Aristeidis Tomaras
+    </string>
     <string-array name="stages_array">
         <item>1</item>
         <item>2</item>
