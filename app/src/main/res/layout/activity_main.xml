@@ -29,7 +29,7 @@
 
             android:layout_width="100dp"
             android:layout_height="40dp"
-            android:background="@drawable/buttonshape"
+            android:background="@drawable/main_button_sel"
             android:shadowColor="#0BCF04"
             android:shadowDx="3"
             android:shadowDy="3"
