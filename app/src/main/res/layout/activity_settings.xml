@@ -13,7 +13,7 @@
         android:id="@+id/textView"
         android:layout_alignParentTop="false"
         android:padding="10dp"
-        android:background="?attr/colorPrimary"
+        android:background="?attr/colorPrimaryDark"
         android:textColor="#FFFFFF"/>
 
     <TextView

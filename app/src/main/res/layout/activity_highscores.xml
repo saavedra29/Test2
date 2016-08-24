@@ -1,13 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".HighscoresActivity">
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Highscores"
+        android:id="@+id/highscoresTextView"
+        android:layout_alignParentTop="false"
+        android:padding="10dp"
+        android:background="?attr/colorPrimaryDark"
+        android:textColor="#FFFFFF"/>
+
+    <android.support.v7.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:columnCount="3" app:rowCount="5"
+        android:layout_below="@id/highscoresTextView"
+        android:id="@+id/highscoresLayout"
+        android:layout_margin="15dp">
+
+        <TextView android:text="1 round:"
+                  android:layout_margin="10dp"
+                  android:textSize="17dp"/>
+        <TextView android:text="highscore"
+                  android:layout_margin="10dp"
+                  android:textSize="17dp"/>
+        <TextView android:text="Reset"
+                  android:layout_margin="10dp"
+                  app:layout_gravity="right"/>
+        <TextView android:text="2 rounds:"
+                  android:layout_margin="10dp"
+                  android:textSize="17dp"/>
+        <TextView android:text="highscore"
+                  android:layout_margin="10dp"
+                  android:textSize="17dp"/>
+        <TextView android:text="Reset"
+                  android:layout_margin="10dp"
+                  app:layout_gravity="right"/>
+        <TextView android:text="3 rounds:"
+                  android:layout_margin="10dp"
+                  android:textSize="17dp"/>
+        <TextView android:text="highscore"
+                  android:layout_margin="10dp"
+                  android:textSize="17dp"/>
+        <TextView android:text="Reset"
+                  android:layout_margin="10dp"
+                  app:layout_gravity="right"/>
+        <TextView android:text="4 rounds:"
+                  android:layout_margin="10dp"
+                  android:textSize="17dp"/>
+        <TextView android:text="highscore"
+                  android:layout_margin="10dp"
+                  android:textSize="17dp"/>
+        <TextView android:text="Reset"
+                  android:layout_margin="10dp"
+                  app:layout_gravity="right"/>
+        <TextView android:text="5 rounds:"
+                  android:layout_margin="10dp"
+                  android:textSize="17dp"/>
+        <TextView android:text="highscore"
+                  android:layout_margin="10dp"
+                  android:textSize="17dp"/>
+        <TextView android:text="Reset"
+                  android:layout_margin="10dp"
+                  app:layout_gravity="right"/>
+
+
+    </android.support.v7.widget.GridLayout>
 
 </RelativeLayout>
