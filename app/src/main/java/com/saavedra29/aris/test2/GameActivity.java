@@ -25,9 +25,9 @@ public class GameActivity extends Activity
     private HashMap<Integer, Integer> relation = new HashMap<>();
     private HashMap<Integer, Boolean> faceCondition = new HashMap<>();
     private ViewGroup layoutView;
+    public static long scoreLong;
     static int round;
     static String score;
-    static long scoreLong;
     private boolean gameState;
     private int imagesNumber;
     private int invisibleObjects;
@@ -219,11 +219,11 @@ public class GameActivity extends Activity
         SharedPreferences.Editor editor = preferences.edit();
 
         long tmpScore = preferences.getLong(Integer.toString(MainActivity.rounds),
-                MainActivity.scoreLong + 1);
+                scoreLong + 1);
 
-        if (tmpScore > MainActivity.scoreLong)
+        if (tmpScore > scoreLong)
         {
-            editor.putLong(Integer.toString(MainActivity.rounds), MainActivity.scoreLong);
+            editor.putLong(Integer.toString(MainActivity.rounds), scoreLong);
             editor.putString(Integer.toString(MainActivity.rounds) + "_str", score);
         }
         editor.apply();

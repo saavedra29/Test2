@@ -129,7 +129,7 @@ public class MChronometer extends TextView {
         text += df.format(seconds) + ":";
         text += Integer.toString(milliseconds);
 
-        MainActivity.scoreLong = timeElapsed;
+        GameActivity.scoreLong = timeElapsed;
         setText(text);
     }
 
