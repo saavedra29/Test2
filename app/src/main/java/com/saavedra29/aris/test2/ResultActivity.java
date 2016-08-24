@@ -3,6 +3,7 @@ package com.saavedra29.aris.test2;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,7 @@ public class ResultActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+
         TextView tx = (TextView)findViewById(R.id.result_label);
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/wood.ttf");
         tx.setTypeface(custom_font);
@@ -56,19 +58,29 @@ public class ResultActivity extends Activity
 
 
         // Create reference to the output textview
-        TextView text = (TextView)findViewById(R.id.score_output);
+        TextView newHighscoreText = (TextView)findViewById(R.id.newScoreLabel);
+        TextView scoreText = (TextView)findViewById(R.id.scoreLabel);
+        TextView scoreOutputText = (TextView)findViewById(R.id.scoreOutput);
+        TextView highscoreText = (TextView)findViewById(R.id.highscoreLabel);
+        TextView highscoreOutputText = (TextView)findViewById(R.id.highscoreOutput);
 
         // If oldScore is not null inform about new highscore
         if (newHighscore)
         {
-            text.setText("You have achived new HIGHSCORE!!" +
-            "\nCurrent score: " + scoreStr +
-            "\nPrevious highscore: " + oldScoreString);
+            newHighscoreText.setVisibility(TextView.VISIBLE);
+            scoreText.setText("Score: ");
+            scoreOutputText.setText(scoreStr);
+            highscoreText.setText("Old highscore: ");
+            highscoreOutputText.setText(oldScoreString);
         }
 
         else
         {
-            text.setText("Current score: " + scoreStr + "\nHighscore: " + oldScoreString);
+            newHighscoreText.setVisibility(TextView.INVISIBLE);
+            scoreText.setText("Score: ");
+            scoreOutputText.setText(scoreStr);
+            highscoreText.setText("Highscore: ");
+            highscoreOutputText.setText(oldScoreString);
         }
 
         // TAKE CARE OF GOING BACK TO MAIN ACTIVITY BY TOUCHING ANYWHERE IN THE ACTIVITY

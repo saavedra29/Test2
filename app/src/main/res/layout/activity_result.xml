@@ -28,14 +28,13 @@
         android:layout_height="0dp"
         app:columnCount="2"
         app:rowCount="3"
-        app:layout_weight="1"
         android:layout_weight="1"
         app:rowOrderPreserved="false"
         app:useDefaultMargins="false"
         >
 
         <TextView
-            android:id="@+id/score_output0"
+            android:id="@+id/newScoreLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_columnSpan="2"
@@ -52,7 +51,7 @@
             />
 
         <TextView
-            android:id="@+id/score_output"
+            android:id="@+id/scoreLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -68,7 +67,7 @@
             />
 
         <TextView
-            android:id="@+id/score_output2"
+            android:id="@+id/scoreOutput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -84,7 +83,7 @@
             />
 
         <TextView
-            android:id="@+id/score_output3"
+            android:id="@+id/highscoreLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -100,7 +99,7 @@
             />
 
         <TextView
-            android:id="@+id/score_output4"
+            android:id="@+id/highscoreOutput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
