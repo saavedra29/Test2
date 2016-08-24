@@ -129,11 +129,15 @@ public class GameActivity extends Activity
                 // Check for end of game
                 if ((invisibleObjects == imagesNumber - 2) && (round == MainActivity.rounds))
                 {
+                    // Stop chronometer
                     chrono.stop();
+                    // Get the new score as time string
                     score = (String)chrono.getText();
-                    // Create preferences to check if highscore and save
-                    checkHighscore();
-                    Intent intent = new Intent(this, ResultActivity.class);
+                    // Create context to pass data to the next activity
+                    Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                    intent.putExtra("scoreStr", score);
+                    intent.putExtra("score", scoreLong);
+                    // Start new activity and close the current
                     startActivity(intent);
                     finish();
                 }
@@ -211,31 +215,18 @@ public class GameActivity extends Activity
         chrono.start();
     }
 
-    private void checkHighscore()
-    {
-        SharedPreferences preferences = getApplicationContext().getSharedPreferences(
-                "Highscores", MODE_PRIVATE
-        );
-        SharedPreferences.Editor editor = preferences.edit();
-
-        long tmpScore = preferences.getLong(Integer.toString(MainActivity.rounds),
-                scoreLong + 1);
-
-        if (tmpScore > scoreLong)
-        {
-            editor.putLong(Integer.toString(MainActivity.rounds), scoreLong);
-            editor.putString(Integer.toString(MainActivity.rounds) + "_str", score);
-        }
-        editor.apply();
-    }
 
     public void endGame(View view)
     {
+        // Stop chronometer
         chrono.stop();
+        // Get the new score as time string
         score = (String)chrono.getText();
-        // Create preferences to check if highscore and save
-        checkHighscore();
-        Intent intent = new Intent(this, ResultActivity.class);
+        // Create context to pass data to the next activity
+        Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+        intent.putExtra("scoreStr", score);
+        intent.putExtra("score", scoreLong);
+        // Start new activity and close the current
         startActivity(intent);
         finish();
     }
