@@ -31,9 +31,11 @@
                   android:layout_margin="10dp"
                   android:textSize="17sp"
                   android:id="@+id/highscore1output"/>
-        <TextView android:text="Reset"
-                  android:layout_margin="10dp"
-                  app:layout_gravity="right"/>
+        <Button android:text="Reset"
+                android:layout_margin="10dp"
+                app:layout_gravity="right"
+                android:id="@+id/reset1"
+                android:onClick="onReset1"/>
         <TextView android:text="2 rounds:"
                   android:layout_margin="10dp"
                   android:textSize="17sp"/>
@@ -41,9 +43,11 @@
                   android:layout_margin="10dp"
                   android:textSize="17sp"
                   android:id="@+id/highscore2output"/>
-        <TextView android:text="Reset"
-                  android:layout_margin="10dp"
-                  app:layout_gravity="right"/>
+        <Button android:text="Reset"
+                android:layout_margin="10dp"
+                app:layout_gravity="right"
+                android:id="@+id/reset2"
+                android:onClick="onReset2"/>
         <TextView android:text="3 rounds:"
                   android:layout_margin="10dp"
                   android:textSize="17sp"/>
@@ -51,9 +55,11 @@
                   android:layout_margin="10dp"
                   android:textSize="17sp"
                   android:id="@+id/highscore3output"/>
-        <TextView android:text="Reset"
-                  android:layout_margin="10dp"
-                  app:layout_gravity="right"/>
+        <Button android:text="Reset"
+                android:layout_margin="10dp"
+                app:layout_gravity="right"
+                android:id="@+id/reset3"
+                android:onClick="onReset3"/>
         <TextView android:text="4 rounds:"
                   android:layout_margin="10dp"
                   android:textSize="17sp"/>
@@ -61,9 +67,11 @@
                   android:layout_margin="10dp"
                   android:textSize="17sp"
                   android:id="@+id/highscore4output"/>
-        <TextView android:text="Reset"
-                  android:layout_margin="10dp"
-                  app:layout_gravity="right"/>
+        <Button android:text="Reset"
+                android:layout_margin="10dp"
+                app:layout_gravity="right"
+                android:id="@+id/reset4"
+                android:onClick="onReset4"/>
         <TextView android:text="5 rounds:"
                   android:layout_margin="10dp"
                   android:textSize="17sp"/>
@@ -71,9 +79,11 @@
                   android:layout_margin="10dp"
                   android:textSize="17sp"
                   android:id="@+id/highscore5output"/>
-        <TextView android:text="Reset"
-                  android:layout_margin="10dp"
-                  app:layout_gravity="right"/>
+        <Button android:text="Reset"
+                android:layout_margin="10dp"
+                app:layout_gravity="right"
+                android:id="@+id/reset5"
+                android:onClick="onReset5"/>
 
 
     </android.support.v7.widget.GridLayout>
