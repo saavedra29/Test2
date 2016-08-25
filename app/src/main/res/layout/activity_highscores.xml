@@ -26,7 +26,8 @@
 
         <TextView android:text="1 round:"
                   android:layout_margin="10dp"
-                  android:textSize="17sp"/>
+                  android:textSize="17sp"
+                  android:textStyle="bold"/>
         <TextView android:text="highscore"
                   android:layout_margin="10dp"
                   android:textSize="17sp"
@@ -38,7 +39,8 @@
                 android:onClick="onReset1"/>
         <TextView android:text="2 rounds:"
                   android:layout_margin="10dp"
-                  android:textSize="17sp"/>
+                  android:textSize="17sp"
+                  android:textStyle="bold"/>
         <TextView android:text="highscore"
                   android:layout_margin="10dp"
                   android:textSize="17sp"
@@ -50,7 +52,8 @@
                 android:onClick="onReset2"/>
         <TextView android:text="3 rounds:"
                   android:layout_margin="10dp"
-                  android:textSize="17sp"/>
+                  android:textSize="17sp"
+                  android:textStyle="bold"/>
         <TextView android:text="highscore"
                   android:layout_margin="10dp"
                   android:textSize="17sp"
@@ -62,7 +65,8 @@
                 android:onClick="onReset3"/>
         <TextView android:text="4 rounds:"
                   android:layout_margin="10dp"
-                  android:textSize="17sp"/>
+                  android:textSize="17sp"
+                  android:textStyle="bold"/>
         <TextView android:text="highscore"
                   android:layout_margin="10dp"
                   android:textSize="17sp"
@@ -74,7 +78,8 @@
                 android:onClick="onReset4"/>
         <TextView android:text="5 rounds:"
                   android:layout_margin="10dp"
-                  android:textSize="17sp"/>
+                  android:textSize="17sp"
+                  android:textStyle="bold"/>
         <TextView android:text="highscore"
                   android:layout_margin="10dp"
                   android:textSize="17sp"
