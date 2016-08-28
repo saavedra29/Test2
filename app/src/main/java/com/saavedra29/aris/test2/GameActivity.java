@@ -18,10 +18,7 @@ import java.util.Map;
 
 public class GameActivity extends Activity
 {
-    private SharedPreferences preferences = getApplicationContext().getSharedPreferences(
-            "highscores", MODE_PRIVATE
-    );
-    int rounds = preferences.getInt("rounds", 1);
+    int rounds;
     private MChronometer chrono;
     private ArrayList<Integer> couple = new ArrayList<>();
     private ArrayList<String> animalList;
@@ -44,6 +41,10 @@ public class GameActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences(
+                "Highscores", MODE_PRIVATE
+        );
+        rounds = preferences.getInt("rounds", 1);
         chrono = (MChronometer) findViewById(R.id.chronometer);
         round = 0;
         score = "";
@@ -162,7 +163,7 @@ public class GameActivity extends Activity
         round++;
         // Set new text for the round indicator
         TextView indicator = (TextView)findViewById(R.id.round_indicator);
-        indicator.setText(Integer.toString(round) + "/" + rounds);
+        indicator.setText(Integer.toString(round) + "/" + Integer.toString(rounds));
         // Create list of animal names and shuffle it
         animalList = new ArrayList<>(Arrays.asList("lion", "lion", "rhino",
                 "rhino", "chimpanzee", "chimpanzee", "giraffe", "giraffe", "hippopotamus",

@@ -13,16 +13,16 @@ public class SettingsActivity extends AppCompatActivity
 
     private int progress;
     private TextView textView;
-    private SharedPreferences preferences = getApplicationContext().getSharedPreferences(
-            "Highscores", MODE_PRIVATE
-    );
+    private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-
+        preferences = getApplicationContext().getSharedPreferences(
+            "Highscores", MODE_PRIVATE
+        );
         progress = preferences.getInt("rounds", 1);
         textView = (TextView)findViewById(R.id.seekView);
         SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
@@ -36,7 +36,7 @@ public class SettingsActivity extends AppCompatActivity
             public void onProgressChanged(SeekBar seekBar, int progresValue, boolean fromUser)
             {
                 progress = progresValue + 1;
-                textView.setText("Rounds: " + progresValue + 1);
+                textView.setText("Rounds: " + progress);
             }
 
             @Override
@@ -53,7 +53,7 @@ public class SettingsActivity extends AppCompatActivity
     public void acceptRounds(View view)
     {
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putLong("rounds", progress);
+        editor.putInt("rounds", progress);
         editor.apply();
         Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);

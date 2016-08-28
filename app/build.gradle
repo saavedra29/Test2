@@ -15,8 +15,8 @@ android {
         applicationId "com.saavedra29.aris.test2"
         minSdkVersion 17
         targetSdkVersion 24
-        versionCode 1
-        versionName "1.1"
+        versionCode 3
+        versionName "2.1"
     }
     buildTypes {
         release {
@@ -25,7 +25,10 @@ android {
             signingConfig signingConfigs.config
         }
         debug {
+            /*
             signingConfig signingConfigs.config
+            */
+            applicationIdSuffix ".debug"
         }
     }
 }
