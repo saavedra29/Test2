@@ -2,6 +2,7 @@ package com.saavedra29.aris.test2;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,10 @@ import java.util.Map;
 
 public class GameActivity extends Activity
 {
+    private SharedPreferences preferences = getApplicationContext().getSharedPreferences(
+            "highscores", MODE_PRIVATE
+    );
+    int rounds = preferences.getInt("rounds", 1);
     private MChronometer chrono;
     private ArrayList<Integer> couple = new ArrayList<>();
     private ArrayList<String> animalList;
@@ -125,7 +130,8 @@ public class GameActivity extends Activity
                 // Add it to couple second position
                 couple.add(1, id);
                 // Check for end of game
-                if ((invisibleObjects == imagesNumber - 2) && (round == MainActivity.rounds))
+                if ((invisibleObjects == imagesNumber - 2) &&
+                        (round == rounds))
                 {
                     // Stop chronometer
                     chrono.stop();
@@ -156,7 +162,7 @@ public class GameActivity extends Activity
         round++;
         // Set new text for the round indicator
         TextView indicator = (TextView)findViewById(R.id.round_indicator);
-        indicator.setText(Integer.toString(round) + "/" + MainActivity.rounds);
+        indicator.setText(Integer.toString(round) + "/" + rounds);
         // Create list of animal names and shuffle it
         animalList = new ArrayList<>(Arrays.asList("lion", "lion", "rhino",
                 "rhino", "chimpanzee", "chimpanzee", "giraffe", "giraffe", "hippopotamus",
