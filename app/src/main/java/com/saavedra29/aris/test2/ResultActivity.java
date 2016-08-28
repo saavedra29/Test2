@@ -40,17 +40,18 @@ public class ResultActivity extends Activity
                 "Highscores", MODE_PRIVATE
         );
 
-        long tmpScore = preferences.getLong(Integer.toString(MainActivity.rounds),
+        int rounds = preferences.getInt("rounds", 1);
+        long tmpScore = preferences.getLong(Integer.toString(rounds),
                 score + 1);
         oldScoreString = preferences.getString(Integer.toString(
-                MainActivity.rounds) + "_str", scoreStr);
+                rounds) + "_str", scoreStr);
 
         if (tmpScore > score)
         {
             newHighscore = true;
             SharedPreferences.Editor editor = preferences.edit();
-            editor.putLong(Integer.toString(MainActivity.rounds), score);
-            editor.putString(Integer.toString(MainActivity.rounds) + "_str", scoreStr);
+            editor.putLong(Integer.toString(rounds), score);
+            editor.putString(Integer.toString(rounds) + "_str", scoreStr);
             editor.apply();
         }
         /// -----------------------------------------------------///

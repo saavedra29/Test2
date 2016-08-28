@@ -11,8 +11,6 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity
 {
-    public static int rounds = 1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
