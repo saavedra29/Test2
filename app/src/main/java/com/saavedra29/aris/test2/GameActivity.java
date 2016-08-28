@@ -18,7 +18,7 @@ import java.util.Map;
 
 public class GameActivity extends Activity
 {
-    int rounds;
+    private int rounds;
     private MChronometer chrono;
     private ArrayList<Integer> couple = new ArrayList<>();
     private ArrayList<String> animalList;
@@ -26,15 +26,13 @@ public class GameActivity extends Activity
     private HashMap<Integer, Boolean> faceCondition = new HashMap<>();
     private ViewGroup layoutView;
     public static long scoreLong;
-    static int round;
-    static String score;
+    private int round;
+    private String score;
     private boolean gameState;
     private int imagesNumber;
     private int invisibleObjects;
     // chronometer related variables
-    static long timeBeforeStop;
-    static long timeAfterStop;
-    static boolean firstTimeRunning;
+    private long timeBeforeStop;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -48,7 +46,6 @@ public class GameActivity extends Activity
         chrono = (MChronometer) findViewById(R.id.chronometer);
         round = 0;
         score = "";
-        firstTimeRunning = true;
         initStage();
         timeBeforeStop = SystemClock.elapsedRealtime();
 
@@ -214,7 +211,7 @@ public class GameActivity extends Activity
     {
         long difference;
         super.onStart();
-        timeAfterStop = SystemClock.elapsedRealtime();
+        long timeAfterStop = SystemClock.elapsedRealtime();
         difference = timeAfterStop - timeBeforeStop;
         chrono.setBase(chrono.getBase() + difference);
         chrono.start();
